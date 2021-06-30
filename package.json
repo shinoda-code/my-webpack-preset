@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx webpack"
+    "test": "npx webpack",
+    "cleanup": "npx rimraf ./public",
+    "dev": "npm run cleanup && npx webpack --config ./webpack.dev.js",
+    "build": "npm run cleanup && npx webpack --config ./webpack.prod.js"
   },
   "keywords": [],
   "author": "",
@@ -25,10 +28,12 @@
     "mini-css-extract-plugin": "^1.6.2",
     "postcss-loader": "^6.1.0",
     "regenerator-runtime": "^0.13.7",
+    "rimraf": "^3.0.2",
     "sass": "^1.35.1",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.0.0",
     "webpack": "^5.41.1",
-    "webpack-cli": "^4.7.2"
+    "webpack-cli": "^4.7.2",
+    "webpack-merge": "^5.8.0"
   }
 }
