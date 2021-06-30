@@ -1,7 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const { ProvidePlugin } = require('webpack');
 
 module.exports = ({outputFile, assetFile}) => ({
     entry: {
@@ -61,6 +61,10 @@ module.exports = ({outputFile, assetFile}) => ({
         new HtmlWebpackPlugin ({
             template: './src/index.html',
             inject: 'body', //分割
-        })
+        }),
+        new ProvidePlugin({
+            jQuery: 'jquery',
+            $: 'jquery'
+        }),
     ]
 });

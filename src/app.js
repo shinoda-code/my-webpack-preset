@@ -1,13 +1,10 @@
 import './sub';
-import './app.scss';
-// import './index.html';
-// import 'regenerator-runtime';
-// import 'core-js';
+import './app.scss'; 
 
 const init = async() => {
     console.log('this is');
     await asyncFn();
-
+    jQuery();
 };
 
 async function asyncFn() {
