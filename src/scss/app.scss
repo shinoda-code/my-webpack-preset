@@ -10,7 +10,8 @@ h1 {
 }
 
 .bg {
-    background-image: url('./images/orange.png');
+    // background-image: url('~@imgs/orange.png');
+    background-image: url('../images/orange.png');
     background-size: cover;
     width: 100px;
     height: 100px;

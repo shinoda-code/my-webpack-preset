@@ -2,21 +2,39 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/sub.js":
-/*!********************!*\
-  !*** ./src/sub.js ***!
-  \********************/
+/***/ "./src/js/sub.js":
+/*!***********************!*\
+  !*** ./src/js/sub.js ***!
+  \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils */ "./src/utils/index.js");
-
+/* provided dependency */ var utils = __webpack_require__(/*! ./src/js/utils */ "./src/js/utils/index.js")["default"];
+ // import utils from './utils';
 
 console.log('this is sub.js');
 jquery__WEBPACK_IMPORTED_MODULE_0___default()();
-_utils__WEBPACK_IMPORTED_MODULE_1__.default.log('adsf');
+utils.log('adsf');
+
+/***/ }),
+
+/***/ "./src/js/utils/index.js":
+/*!*******************************!*\
+  !*** ./src/js/utils/index.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  log: function log(str) {
+    console.log(str);
+  }
+});
 
 /***/ })
 
@@ -189,7 +207,7 @@ _utils__WEBPACK_IMPORTED_MODULE_1__.default.log('adsf');
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["utils","vendors"], () => (__webpack_require__("./src/sub.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors"], () => (__webpack_require__("./src/js/sub.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
