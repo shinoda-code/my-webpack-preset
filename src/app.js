@@ -5,6 +5,7 @@ const init = async() => {
     console.log('this is');
     await asyncFn();
     jQuery();
+    utils.log('hello from app.js');
 };
 
 async function asyncFn() {

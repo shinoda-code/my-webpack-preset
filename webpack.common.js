@@ -10,7 +10,8 @@ module.exports = ({outputFile, assetFile}) => ({
     },
     output: {
         path: path.resolve(__dirname, 'public'),
-        filename: `${outputFile}.js`, 
+        filename: `${outputFile}.js`,
+        chunkFilename: `${outputFile}.js`,
         assetModuleFilename: 'images/[hash][ext][query]' 
     },
     module: {
@@ -64,7 +65,29 @@ module.exports = ({outputFile, assetFile}) => ({
         }),
         new ProvidePlugin({
             jQuery: 'jquery',
-            $: 'jquery'
+            $: 'jquery',
+            utils: [path.resolve(__dirname, 'src/utils'), 'default']
         }),
-    ]
+    ],
+    optimization: {
+        splitChunks: {
+          chunks: 'all',
+          minSize: 0,
+
+          cacheGroups: {
+            defaultVendors: {
+              name: "vendors",
+              test: /[\\/]node_modules[\\/]/,
+              priority: -10,
+              reuseExistingChunk: true,
+            },
+            utils: {
+                name: "utils",
+                test: /src[\\/]utils/,
+            },
+            default:false
+          },
+        }
+    }
+    
 });
