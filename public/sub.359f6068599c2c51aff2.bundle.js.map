@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://my-webpack-preset/./src/sub.js"],"names":["console","log"],"mappings":";;;;;AACAA,OAAO,CAACC,GAAR,CAAY,gBAAZ,E","file":"sub.359f6068599c2c51aff2.bundle.js","sourcesContent":["\r\nconsole.log('this is sub.js');"],"sourceRoot":""}
