@@ -5,8 +5,10 @@ const { ProvidePlugin } = require('webpack');
 
 module.exports = ({outputFile, assetFile}) => ({
     entry: {
-        app:'./src/js/app.js',
-        sub:'./src/js/sub.js'
+        // app:'./src/js/app.js',
+        // sub:'./src/js/sub.js'
+        index:'./src/ts/index.ts',
+        // sub:'./src/ts/sub.js'
     },
     output: {
         path: path.resolve(__dirname, 'public'),
@@ -21,6 +23,7 @@ module.exports = ({outputFile, assetFile}) => ({
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'eslint-loader',
+
                 options: {
                     fix: true
                 }
@@ -30,6 +33,13 @@ module.exports = ({outputFile, assetFile}) => ({
                 exclude: /node_modules/,
                 loader: 'babel-loader',
             },
+
+            //tsloader
+            {
+                test: /\.ts$/,
+                loader: 'ts-loader'
+            },
+            
             {
                 test: /\.scss$/,
                 use: [
@@ -96,7 +106,7 @@ module.exports = ({outputFile, assetFile}) => ({
             '@scss':[ path.resolve(__dirname, 'src/scss')],
             '@imgs': path.resolve(__dirname, 'src/images')
         },
-        extensions: ['.js', 'scss'],
+        extensions: [ '.ts', '.js', 'scss'],
         modules: [path.resolve(__dirname, 'src'),'node_modules'],
     }
 });
